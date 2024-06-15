@@ -1,0 +1,30 @@
+# dependencies
+##.NET Aspire
+SignalRSample.AppHost/
+SignalRSample.ServiceDefaults/
+
+# Compiled source
+SignalRSample/bin
+
+# ASP.NET Core Web API project template
+SignalRSample/obj
+SignalRSample/Properties
+
+# Foreign libraries
+SignalRSample/wwwroot/lib
+
+# Secret keys
+SignalRSample/appsettings.json
+SignalRSample/appsettings.Development.json
+
+#Work maps
+Logs
+Migrations
+
+# misc
+.vs
+.dockerignore
+#SignalRSample.sln
+#SignalRSample.csproj
+SignalRSample/Dockerfile
+*.http
