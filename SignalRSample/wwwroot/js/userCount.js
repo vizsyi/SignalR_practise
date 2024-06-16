@@ -5,7 +5,10 @@ const userCountSpan = document.getElementById("totalUsersCounter");
 //create connection
 const connectionUserCount = new signalR
     .HubConnectionBuilder()
-    .withUrl("/hubs/userCount").build();
+    .withUrl("/hubs/userCount", signalR.HttpTransportType.WebSockets)
+    //.withUrl("/hubs/userCount", signalR.HttpTransportType.ServerSentEvents)
+    //.withUrl("/hubs/userCount", signalR.HttpTransportType.LongPolling)
+    .build();
 
 //connect to methods that hub invokes aka receive notification from hub
 connectionUserCount.on("updateTotalViews", (value) => {
