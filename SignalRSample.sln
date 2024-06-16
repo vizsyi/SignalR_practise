@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRSample", "SignalRSample\SignalRSample.csproj", "{1FB701F3-D607-41C7-AF84-DFE01D051C0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRSample.AppHost", "SignalRSample.AppHost\SignalRSample.AppHost.csproj", "{AB3545F0-778D-4157-92D9-69CD29D1F8FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRSample.AppHost", "SignalRSample.AppHost\SignalRSample.AppHost.csproj", "{AB3545F0-778D-4157-92D9-69CD29D1F8FB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRSample.ServiceDefaults", "SignalRSample.ServiceDefaults\SignalRSample.ServiceDefaults.csproj", "{09DDEFAB-4166-444F-92C8-BFEC4811AB3E}"
 EndProject
@@ -20,11 +20,9 @@ Global
 		{1FB701F3-D607-41C7-AF84-DFE01D051C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FB701F3-D607-41C7-AF84-DFE01D051C0A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AB3545F0-778D-4157-92D9-69CD29D1F8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB3545F0-778D-4157-92D9-69CD29D1F8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB3545F0-778D-4157-92D9-69CD29D1F8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB3545F0-778D-4157-92D9-69CD29D1F8FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09DDEFAB-4166-444F-92C8-BFEC4811AB3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09DDEFAB-4166-444F-92C8-BFEC4811AB3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09DDEFAB-4166-444F-92C8-BFEC4811AB3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09DDEFAB-4166-444F-92C8-BFEC4811AB3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
