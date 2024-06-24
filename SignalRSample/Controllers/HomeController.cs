@@ -23,6 +23,26 @@ public class HomeController : Controller
     {
         return View();
     }
+    
+    public IActionResult BaseChat()
+    {
+        return View();
+    }
+    
+    public IActionResult DeathlyHallowRace()
+    {
+        return View();
+    }
+
+    public IActionResult HarryPotterHouse()
+    {
+        return View();
+    }
+
+    public IActionResult Notification()
+    {
+        return View();
+    }
 
     public async Task<IActionResult> DeathlyHallows(string type)
     {
@@ -37,11 +57,6 @@ public class HomeController : Controller
             SD.DeathlyHallowRace[SD.Wand]);
 
         return Accepted();
-    }
-
-    public IActionResult Notification()
-    {
-        return View();
     }
 
     public IActionResult Privacy()
