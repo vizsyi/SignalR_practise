@@ -1,12 +1,12 @@
 ﻿@{
-    ViewData["Title"] = "SignalR Practise Page";
+    ViewData["Title"] = "Base chat";
 }
 
 <div class="container">
     <div class="row">&nbsp;</div>
     <div class="row">
         <div class="col-3">Sender</div>
-        <div class="col-4"><input type="text" value="@User.Identity.Name" id="senderEmail" /></div>
+        <div class="col-4"><input type="text" value="@User.Identity?.Name" id="senderEmail" /></div>
     </div>
     <div class="row">
         <div class="col-3">Receiver</div>
