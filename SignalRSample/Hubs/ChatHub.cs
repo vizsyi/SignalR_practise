@@ -15,17 +15,45 @@ namespace SignalRSample.Hubs
 
         public override Task OnConnectedAsync()
         {
-            var userId = Context.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userId = Context.User?.FindFirstValue(ClaimTypes.NameIdentifier);
             if (!String.IsNullOrEmpty(userId))
             {
                 var userName = _db.Users.FirstOrDefault(u => u.Id == userId)?.UserName;
                 if (!String.IsNullOrEmpty(userName))
                 {
-                    Clients.Users(HubConnections.OnlineUsers()).SendAsync("ReceiveUserConnected", userId, userName);
+                    Clients.Users(HubConnections.OnlineUsers())
+                        .SendAsync("ReceiveUserConnected", userId, userName, HubConnections.HasUser(userId));
                     HubConnections.AddUserConnection(userId, Context.ConnectionId);
                 }
             }
             return base.OnConnectedAsync();
+        }
+
+        public override Task OnDisconnectedAsync(Exception? exception)
+        {
+            var userId = Context.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!String.IsNullOrEmpty(userId))
+            {
+                if (HubConnections.HasUserConnection(userId, Context.ConnectionId))
+                {
+                    var userConnections = HubConnections.Users[userId];
+                    userConnections.Remove(Context.ConnectionId);
+                    if(!userConnections.Any())
+                    {
+                        HubConnections.Users.Remove(userId);
+                    }
+                }
+                
+                
+                var userName = _db.Users.FirstOrDefault(u => u.Id == userId)?.UserName;
+                if (!String.IsNullOrEmpty(userName))
+                {
+                    Clients.Users(HubConnections.OnlineUsers())
+                        .SendAsync("ReceiveUserDisconnected", userId, userName, HubConnections.HasUser(userId));
+                    //HubConnections.AddUserConnection(userId, Context.ConnectionId);
+                }
+            }
+            return base.OnDisconnectedAsync(exception);
         }
 
     }
